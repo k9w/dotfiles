@@ -1,0 +1,11 @@
+# started 07-01-2021
+
+# CWM uses C-/ to search applications. Emacs and mg use it to undo.
+# CWM does not even find open applications with it. And I want to use
+# it for Emacs. So the below command unbinds the key for CWM.
+
+# Specifying C-/ did not work here. cwm(1) manpage refers to the
+# command as C-slash, which works below. But that was not obvious from
+# the manpage.
+
+unbind-key C-slash
