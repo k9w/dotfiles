@@ -1,0 +1,5 @@
+# Ignore all files and directories recursively except what is added
+# manually by 'git add'. Requires 'git add -f' to add a file for the
+# first time to be committed and tracked.
+
+*
