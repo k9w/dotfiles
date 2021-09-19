@@ -1,2 +1,10 @@
 This is a file I want to add to git, rename it, and remove it from
 git, ideally without deleting the file from the working directory.
+
+Looks like removing from git but keeping the file locally in the same
+directory is more complicated. So for this example, just rename this
+file and remove it from git and from the directory. 
+
+One option to keep the file on disk might be to move it out of the
+tracked directory.
+
