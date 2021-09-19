@@ -6,7 +6,7 @@
 [core]
 	editor = mg
 	autocrlf = input
-	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
+#	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
 [init]
 	defaultBranch = main
 
