@@ -1,0 +1,2 @@
+This is a file I want to add to git, rename it, and remove it from
+git, ideally without deleting the file from the working directory.
