@@ -1,12 +1,21 @@
 # This is Git's per-user configuration file.
 
+# core.editor, core.excludesfile and color.uiset per instructions from
+# Epicodus at:
+
+
+# https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-configurations
+
 [user]
 	name = Kevin Williams
 	email = kevin@k9w.org
 [core]
-	editor = mg
+	editor = code --wait
 	autocrlf = input
+	excludesfile = /home/kevin/.gitignore_global
 #	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
 [init]
 	defaultBranch = main
 
+[color]
+#	ui = true ; color.ui already defaults to true.
