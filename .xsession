@@ -10,9 +10,9 @@ xrdb ~/.Xresources
 # xterm -ls
 
 # Start cwm; launch xterm first.
-# xterm &
-# cwm
+ xterm &
+ cwm
 
 # Start xfce, without xterm.
- startxfce4
+# startxfce4
 
