@@ -253,7 +253,7 @@ The three versions I see are:
 ```
 
 <p>
-11-30
+# 11-30
 
 
 Switch notation to present tense, per git commit guidelines.
@@ -261,4 +261,19 @@ Switch notation to present tense, per git commit guidelines.
 Install npm, which brings nodejs and openssl.
 
 Need to test per the Epicodus instructions.
+
+
+<p>
+# 12-05
+
+To change sudo to not require a password, I commented the first wheel
+line below in /etc/sudoers and uncommented the second.
+
+```
+## Allows people in group wheel to run all commands
+%wheel  ALL=(ALL)       ALL
+
+## Same thing without a password
+# %wheel        ALL=(ALL)       NOPASSWD: ALL
+```
 
