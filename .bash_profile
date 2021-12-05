@@ -6,3 +6,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
+
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/kevin/.dotnet/tools"
+

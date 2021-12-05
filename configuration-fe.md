@@ -266,7 +266,7 @@ Need to test per the Epicodus instructions.
 <p>
 # 12-05
 
-To change sudo to not require a password, I commented the first wheel
+To change sudo to not require a password, I comment the first wheel
 line below in /etc/sudoers and uncommented the second.
 
 ```
@@ -275,5 +275,19 @@ line below in /etc/sudoers and uncommented the second.
 
 ## Same thing without a password
 # %wheel        ALL=(ALL)       NOPASSWD: ALL
+```
+
+Install dotnet and dotnet-script per Epicodus pre-work assignment.
+
+```
+# dnf install dotnet
+$ dotnet tool install -g dotnet-script
+```
+
+Add ~/.dotnet/tools to path in ~/.bash_profile.
+
+```
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/kevin/.dotnet/tools"
 ```
 
