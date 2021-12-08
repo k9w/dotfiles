@@ -237,3 +237,9 @@ yet.
 
 Today I finished maing ~ a dotfiles repo on branch manjaro-pinebook.
 
+
+Installed ksshaskpass. Further setup to follow.
+
+Added unit file: ~/.config/systemd/user/ssh-agent.service
+
+
