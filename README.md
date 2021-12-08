@@ -2,7 +2,7 @@ started 09-13-21
 
 This 'dotfiles' git repository tracks configuration files in my home
 folder on OS installs across most all of my machines. This one is on
-the branch 'fedora-laptop'.
+the branch 'manjaro-pinebook'.
 
 Do not use: 
 

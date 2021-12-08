@@ -47,12 +47,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; https://stackoverflow.com/questions/11373826/how-to-disable-fringe-in-emacs/11480217
-;; (setq set-fringe-mode 0)
-;; (setq fringe-mode no-fringes)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; https://melpa.org/#/getting-started                                                         
+                                                                                               
+;; To install a package such as markdown-preview-mode:                                         
+;; M-X package-refresh-contents                                                                
+;; M-x package-install RET markdown-preview-mode   
