@@ -291,3 +291,134 @@ Add ~/.dotnet/tools to path in ~/.bash_profile.
 export PATH="$PATH:/home/kevin/.dotnet/tools"
 ```
 
+
+
+
+
+Install MySQL Community Server.
+
+```
+# dnf install community-mysql-server
+```
+
+Fails because MariaDB Server is already inbstalled. It'll work with
+MySQL Workbench.
+
+<https://mariadb.com/products/skysql/docs/clients/third-party/mysql-workbench>
+
+Install MySQL Workbench from website since it's not in the Fedora repos.
+
+<https://dev.mysql.com/downloads/workbench/?os=src>
+
+Just the RPM, not the debug. Skip the account creation with:
+"No thanks, just start my download."
+
+```
+# rpm -i /home/kevin/Downloads/mysql-workbench-community-8.0.27-1.fc35.x86_64.rpm
+```
+
+Install dependencies manually.
+
+(No packages installed yet after this step.)
+
+```
+warning: /home/kevin/Downloads/mysql-workbench-community-8.0.27-1.fc35.x86_64.rpm: Header V3 DSA/SHA256 Signature, key ID 5072e1f5: NOKEY
+error: Failed dependencies:
+        libpcrecpp.so.0()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
+        libproj.so.22()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
+        libpython3.9.so.1.0()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
+
+```
+
+Lookup how to query DNF for what package provides a library file.
+<https://unix.stackexchange.com/questions/4705/which-fedora-package-does-a-specific-file-belong-to>
+
+Use:
+
+
+
+```
+$ dnf provides libpcrecpp.so.0
+Last metadata expiration check: 0:17:11 ago on Sun 05 Dec 2021
+09:16:39 AM PST.
+pcre-cpp-8.45-1.fc35.i686 : C++ bindings for PCRE
+Repo        : fedora
+Matched from:
+Provide    : libpcrecpp.so.0
+
+$ dnf provides libproj.so.22
+Last metadata expiration check: 0:17:35 ago on Sun 05 Dec 2021
+09:16:39 AM PST.
+proj-8.1.1-1.fc35.i686 : Cartographic projection software (PROJ)
+Repo        : fedora
+Matched from:
+Provide    : libproj.so.22
+
+proj-8.2.0-1.fc35.i686 : Cartographic projection software (PROJ)
+Repo        : updates
+Matched from:
+Provide    : libproj.so.22
+
+$ dnf provides libpython3.9.so.1.0
+Last metadata expiration check: 0:18:52 ago on Sun 05 Dec 2021
+09:16:39 AM PST.
+python3.9-3.9.7-1.fc35.i686 : Version 3.9 of the Python interpreter
+Repo        : fedora
+Matched from:
+Provide    : libpython3.9.so.1.0
+
+python3.9-3.9.9-2.fc35.i686 : Version 3.9 of the Python interpreter
+Repo        : updates
+Matched from:
+Provide    : libpython3.9.so.1.0
+```
+
+Here are the files and packages:
+
+```
+pcre-cpp-8.45-1.fc35.i686 : libpcrecpp.so.0
+
+proj-8.1.1-1.fc35.i686 : libproj.so.22
+proj-8.2.0-1.fc35.i686 : libproj.so.22
+
+python3.9-3.9.7-1.fc35.i686 : libpython3.9.so.1.0
+python3.9-3.9.9-2.fc35.i686 : libpython3.9.so.1.0
+```
+
+i686 is 32-bit. But I'd like to check if the 64-bit packages have
+those files.
+
+<https://www.putorius.net/list-files-in-a-package-dnf-linux.html>
+
+```
+$ dnf search pcre-cpp
+...
+$ dnf search proj
+...
+$ dnf search python3.9
+```
+
+Found 64-bit versions. Now to check if those packages contain the same
+library file names.
+
+```
+$ dnf repoquery -l pcre-cpp | grep libpcrecpp.so.0
+/usr/lib64/libpcrecpp.so.0
+/usr/lib64/libpcrecpp.so.0.0.2
+/usr/lib/libpcrecpp.so.0
+/usr/lib/libpcrecpp.so.0.0.2
+$ 
+```
+
+This doesn't tell me if it's looking at the 32 or 64 bit
+package. Search again with the while 64 bit package name.
+
+```
+$ dnf repoquery -l pcre-cpp-8.45-1.fc35.x86_64 | grep libpcrecpp.so.0
+/usr/lib64/libpcrecpp.so.0
+/usr/lib64/libpcrecpp.so.0.0.2
+$
+```
+
+Next, check if the other files are in their 64 bit packages.
+
