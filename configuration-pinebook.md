@@ -243,3 +243,23 @@ Installed ksshaskpass. Further setup to follow.
 Added unit file: ~/.config/systemd/user/ssh-agent.service
 
 
+<p>
+# 12-09
+
+Disabled sshd.service and ssh-agent.service.
+
+~/.bash_profile still sets ssh-auth-sock.
+
+
+<p>
+# 12-11
+
+Set /etc/sudoers to nopasswd for group wheel.
+
+<https://unix.stackexchange.com/questions/649894/sudo-still-asking-for-password-despite-being-│
+in-group-wheel>
+
+Copied that line to the end of the file. It works.
+
+Removed ksshaskpass.
+

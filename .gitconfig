@@ -10,7 +10,7 @@
 	name = Kevin Williams
 	email = kevin@k9w.org
 [core]
-	editor = code --wait
+	editor = mg
 	autocrlf = input
 	excludesfile = /home/kevin/.gitignore_global
 #	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
