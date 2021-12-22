@@ -16,3 +16,6 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
+
+
+export SSH_AUTH_SOCK=$(find /tmp -name *agent* -print 2> /dev/null)
