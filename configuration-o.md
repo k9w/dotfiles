@@ -400,7 +400,7 @@ I can make a test repo in ~/git-repos and do 'git remote add' to
 
 
 <p>
-# 10-15
+# 10-15-2021
 
 Upgraded from 7.0-beta to 7.0-release, to minimize upgrades and save
 ware and tear on the SSD.
@@ -415,3 +415,29 @@ Today I successfully re-installed Chromium and added my extensions and a
 theme Dark Theme for Google Chrome.
 
 
+<p>
+# 01-02-2022
+
+OpenBSD FAQ: Multimedia - <https://www.openbsd.org/faq/faq13.html>
+
+OpenBSD disables sound and video input by default. Here's how to
+allow sound input on the spot:
+
+```
+# sysctl kern.audio.record=1
+```
+
+And for the future:
+
+```
+# sysctl kern.audio.record=1 >> /etc/sysctl.conf
+```
+
+
+<p>
+# 01-05
+
+Installed github-cli
+
+M
+# 
