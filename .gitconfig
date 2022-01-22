@@ -6,6 +6,7 @@
 [core]
 	editor = mg
 	autocrlf = input
+	excludesfile = /home/kevin/.gitignore
 #	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
 [init]
 	defaultBranch = main
