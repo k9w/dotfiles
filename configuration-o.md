@@ -439,5 +439,11 @@ And for the future:
 
 Installed github-cli
 
-M
-# 
+
+<p>
+# 01-22
+
+Installed neovim from packages.
+
+ 
+
