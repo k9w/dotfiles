@@ -47,6 +47,12 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; https://melpa.org/#/getting-started
+
+;; To install a package such as markdown-preview-mode:
+;; M-x package-refresh-contents
+;; M-x package-install RET markdown-preview-mode
+
 ;; https://stackoverflow.com/questions/11373826/how-to-disable-fringe-in-emacs/11480217
 ;; (setq set-fringe-mode 0)
 ;; (setq fringe-mode no-fringes)
