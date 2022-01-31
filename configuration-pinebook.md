@@ -252,7 +252,7 @@ Disabled sshd.service and ssh-agent.service.
 
 
 <p>
-# 12-11
+# 12-11-2021
 
 Set /etc/sudoers to nopasswd for group wheel.
 
@@ -262,4 +262,9 @@ in-group-wheel>
 Copied that line to the end of the file. It works.
 
 Removed ksshaskpass.
+
+<p>
+# 01-22-2022
+
+Install Neovim
 
