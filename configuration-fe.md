@@ -295,130 +295,104 @@ export PATH="$PATH:/home/kevin/.dotnet/tools"
 
 
 
-Install MySQL Community Server.
+
+
+<p>
+# 12-13
+
+
+Determine how ssh-agent is started and SSH_AUTH_SOCK is not set.
 
 ```
-# dnf install community-mysql-server
+$ grep -Ri ssh-agent /etc 2> /dev/null
+$ grep -Ri ssh_auth_sock /etc 2> /dev/null
+$ grep -Ri xdg_runtime_dir /etc 2> /dev/null
 ```
 
-Fails because MariaDB Server is already inbstalled. It'll work with
-MySQL Workbench.
+find /run 2> /dev/null | grep ssh | grep socket
 
-<https://mariadb.com/products/skysql/docs/clients/third-party/mysql-workbench>
 
-Install MySQL Workbench from website since it's not in the Fedora repos.
+<p>
+# 12-21
 
-<https://dev.mysql.com/downloads/workbench/?os=src>
-
-Just the RPM, not the debug. Skip the account creation with:
-"No thanks, just start my download."
+Found post in archlinux subreddit for environment variables in wayland.
 
 ```
-# rpm -i /home/kevin/Downloads/mysql-workbench-community-8.0.27-1.fc35.x86_64.rpm
+$ mkdir ~/.config/environment.d
+$ echo SSH_AUTH_SOCK=/run/user/1000/ssh-agnet.socket
 ```
 
-Install dependencies manually.
-
-(No packages installed yet after this step.)
-
-```
-warning: /home/kevin/Downloads/mysql-workbench-community-8.0.27-1.fc35.x86_64.rpm: Header V3 DSA/SHA256 Signature, key ID 5072e1f5: NOKEY
-error: Failed dependencies:
-        libpcrecpp.so.0()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
-        libproj.so.22()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
-        libpython3.9.so.1.0()(64bit) is needed by mysql-workbench-community-8.0.27-1.fc35.x86_64
-
-```
-
-Lookup how to query DNF for what package provides a library file.
-<https://unix.stackexchange.com/questions/4705/which-fedora-package-does-a-specific-file-belong-to>
-
-Use:
+It did not work. ssh_auth_sock is still not set.
 
 
+Instead I exported ssh_auth_sock to the path of the existing agent:
+/run/user/1000/ssh-agent.socket
 
-```
-$ dnf provides libpcrecpp.so.0
-Last metadata expiration check: 0:17:11 ago on Sun 05 Dec 2021
-09:16:39 AM PST.
-pcre-cpp-8.45-1.fc35.i686 : C++ bindings for PCRE
-Repo        : fedora
-Matched from:
-Provide    : libpcrecpp.so.0
+That works in the terminal and in eshell in emacs. Need more testing.
 
-$ dnf provides libproj.so.22
-Last metadata expiration check: 0:17:35 ago on Sun 05 Dec 2021
-09:16:39 AM PST.
-proj-8.1.1-1.fc35.i686 : Cartographic projection software (PROJ)
-Repo        : fedora
-Matched from:
-Provide    : libproj.so.22
 
-proj-8.2.0-1.fc35.i686 : Cartographic projection software (PROJ)
-Repo        : updates
-Matched from:
-Provide    : libproj.so.22
+<p>
+# 01-04-2022
 
-$ dnf provides libpython3.9.so.1.0
-Last metadata expiration check: 0:18:52 ago on Sun 05 Dec 2021
-09:16:39 AM PST.
-python3.9-3.9.7-1.fc35.i686 : Version 3.9 of the Python interpreter
-Repo        : fedora
-Matched from:
-Provide    : libpython3.9.so.1.0
 
-python3.9-3.9.9-2.fc35.i686 : Version 3.9 of the Python interpreter
-Repo        : updates
-Matched from:
-Provide    : libpython3.9.so.1.0
-```
+So far I've used SSH Keys to push to my self-hosted git server at
+r.k9w.org. That requires setting the remote in the SSH format. Git
+also offers the HTTP method, which Github defauts to and which
+Epicodus assumes.
 
-Here are the files and packages:
+Github does not allow password authentication on the command line but
+does support a Personal Access Token (PAT), an easily revokable
+password with custom permissions and by default expires after 30 days.
 
-```
-pcre-cpp-8.45-1.fc35.i686 : libpcrecpp.so.0
+Here is how to setup and use it in Linux.
 
-proj-8.1.1-1.fc35.i686 : libproj.so.22
-proj-8.2.0-1.fc35.i686 : libproj.so.22
+Create the token.
+<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
 
-python3.9-3.9.7-1.fc35.i686 : libpython3.9.so.1.0
-python3.9-3.9.9-2.fc35.i686 : libpython3.9.so.1.0
-```
 
-i686 is 32-bit. But I'd like to check if the 64-bit packages have
-those files.
+Here's how to manually paste your token in the password field duirng
+'git push'.
 
-<https://www.putorius.net/list-files-in-a-package-dnf-linux.html>
+Support for password authentication was removed Github Fixed using Token (August 13, 2021) - Linux
+<https://www.youtube.com/watch?v=ytSoabxSQ6E>
 
-```
-$ dnf search pcre-cpp
-...
-$ dnf search proj
-...
-$ dnf search python3.9
-```
 
-Found 64-bit versions. Now to check if those packages contain the same
-library file names.
+Store it in Linux with the Github CLI.
+<https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git>
 
-```
-$ dnf repoquery -l pcre-cpp | grep libpcrecpp.so.0
-/usr/lib64/libpcrecpp.so.0
-/usr/lib64/libpcrecpp.so.0.0.2
-/usr/lib/libpcrecpp.so.0
-/usr/lib/libpcrecpp.so.0.0.2
-$ 
-```
 
-This doesn't tell me if it's looking at the 32 or 64 bit
-package. Search again with the while 64 bit package name.
+Alternatively storing it as plain text in ~/.git-credentials did not
+even work properly.
 
-```
-$ dnf repoquery -l pcre-cpp-8.45-1.fc35.x86_64 | grep libpcrecpp.so.0
-/usr/lib64/libpcrecpp.so.0
-/usr/lib64/libpcrecpp.so.0.0.2
-$
-```
+Storing Github Personal Access Token in git credentials file
+<https://www.youtube.com/watch?v=sYT71-YAzJ0>
 
-Next, check if the other files are in their 64 bit packages.
+This is possibly related to git-credential(1).
+
+Warning: storing your PAT as plain text is not the best security
+posture.
+
+
+A better way to store the token is using the wallet or password
+manager of the local operating system. Epicodus has instructions for
+that for MacOS and Windows.
+
+For Linux, it depends on what distribution and desktop environment or
+window manager in use.
+
+On Fedora with the Plasma desktop, use kwallet with ksshaskpass. The
+first time you 'git push' ksshaskpass will open a new window for the
+username. Check the box to remember username. Then it'll open a second
+window for the password. Paste the token there. Check the box for it
+to remember password.
+
+Then you can 'git push' without prompt for credentials, until the
+token expires.
+
+This is the method I adopted. But I want to switch to Github CLI.
+
+<p>
+# 01-23
+
+Installed Neovim-QT from DNF.
 

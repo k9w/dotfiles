@@ -2,4 +2,5 @@
 # manually by 'git add'. Requires 'git add -f' to add a file for the
 # first time to be committed and tracked.
 
+.*
 *
