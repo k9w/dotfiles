@@ -21,3 +21,8 @@
 [color]
 #	ui = true ; color.ui already defaults to true.
 
+# The code block below is auto-inserted by 'gh auth login'.
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
