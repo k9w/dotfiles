@@ -26,6 +26,7 @@
 '(fill-column 72)
 
 ;; Change default indent from tab to nil. Set indent level to 2 spaces.
+;; Works for HTML, CSS, JavaScript, and likely other modes too.
 ;; https://emacs.stackexchange.com/questions/48177/how-to-control-javascript-indentation
 ;; https://emacs.stackexchange.com/questions/25044/how-do-i-set-up-indentation-to-2-spaces-in-web-mode/47272#47272
 (setq indent-tabs-mode nil
