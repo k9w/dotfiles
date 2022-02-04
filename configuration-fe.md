@@ -396,3 +396,10 @@ This is the method I adopted. But I want to switch to Github CLI.
 
 Installed Neovim-QT from DNF.
 
+
+<p>
+# 02-03
+
+Install gh for GitHub CLI to authenticate 'git push', etc using my 
+Personal Access Token, previously handled through KWallet.
+

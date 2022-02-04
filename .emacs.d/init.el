@@ -25,6 +25,16 @@
 ;; Set the fill-column from default 70 to 72.
 '(fill-column 72)
 
+;; Change default indent from tab to nil. Set indent level to 2 spaces.
+;; Works for HTML, CSS, JavaScript, and likely other modes too.
+;; https://emacs.stackexchange.com/questions/48177/how-to-control-javascript-indentation
+;; https://emacs.stackexchange.com/questions/25044/how-do-i-set-up-indentation-to-2-spaces-in-web-mode/47272#47272
+(setq indent-tabs-mode nil
+      js-indent-level 2)
+
+;; Display the column number next to the line number in the Mode Line.
+(setq column-number-mode t)
+
 ;; Set the default frame to be fullscreen and set the resize default
 ;; to also be fullscreen.
 (setq default-frame-alist
@@ -46,6 +56,12 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; https://melpa.org/#/getting-started
+
+;; To install a package such as markdown-preview-mode:
+;; M-x package-refresh-contents
+;; M-x package-install RET markdown-preview-mode
 
 ;; https://stackoverflow.com/questions/11373826/how-to-disable-fringe-in-emacs/11480217
 ;; (setq set-fringe-mode 0)
