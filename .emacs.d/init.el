@@ -5,9 +5,6 @@
 ;; the Customize option, or by hand when I find using the variable
 ;; outside the block generates an error for non-declaration.
 
-;; (split-window-right)
-
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -19,8 +16,8 @@
 
 ;; Only works on the initial frame. Ask how to apply it to all frames.
  '(fringe-mode 0 nil (fringe))
- '(package-selected-packages '(markdown-preview-mode)))
- 
+ '(package-selected-packages '(markdown-preview-mode))
+)
 
 ;; Set the fill-column from default 70 to 72.
 '(fill-column 72)
@@ -32,6 +29,8 @@
 (setq indent-tabs-mode nil
       js-indent-level 2)
 
+;; Display the column number next to the line number in the Mode Line.
+(setq column-number-mode t)
 
 ;; Set the default frame to be fullscreen and set the resize default
 ;; to also be fullscreen.
