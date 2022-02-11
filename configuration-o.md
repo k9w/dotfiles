@@ -443,7 +443,28 @@ Installed github-cli
 <p>
 # 01-22
 
-Installed neovim from packages.
+Installed Neovim from packages.
 
- 
 
+<p>
+# 02-05
+
+Installed NodeJS to get npm for Epicodus coursework.
+
+Added created /etc/man.conf from /etc/examples and added two new
+manpaths for npm and sshpk, part of NodeJS.
+
+/usr/local/lib/node_modules/{npm,sshpk}/man
+
+npm search for any package throws a segmentation fault, even in a
+non-project directory, where no .json files can mess it up. I won't be
+able to use npm on OpenBSD with Epicodus for now.
+
+Turns out it's just NodeJS 12.x that's evidently broken on OpenBSD
+7.0-release. Because node 16.x works fine on my server running
+7.0-current from February 1st.
+
+So I will venture to do my course work ssh'ed into that server. I
+removed node, deleted /etc/man.conf, and re-ran makewhatis.  Likely
+when 7.1-release lands and I upgrade my laptop to it, node will work
+properly.

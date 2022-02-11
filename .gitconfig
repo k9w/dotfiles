@@ -1,16 +1,18 @@
-# This is Git's per-user configuration file.
+# public info - Git configuration file.
 
-[user]
-	name = Kevin Williams
-	email = kevin@k9w.org
+[include]
+	path = ~/.priv/.gitconfig
+
 [core]
-	editor = mg
+	editor = emacsclient -a mg
 	autocrlf = input
 	excludesfile = /home/kevin/.gitignore
-#	pager = cat ; only needed on OpenBSD, not Linux/FreeBSD
+	pager = less
 [init]
 	defaultBranch = main
 
+# Inserted automatically by 'gh auth login'.
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/local/bin/gh auth git-credential
+
