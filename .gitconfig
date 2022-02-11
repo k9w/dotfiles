@@ -6,7 +6,7 @@
 [core]
 	editor = emacsclient -a mg
 	autocrlf = input
-	excludesfile = /home/kevin/.gitignore
+	excludesfile = /home/kevin/.gitignore_global
 	pager = less
 [init]
 	defaultBranch = main
