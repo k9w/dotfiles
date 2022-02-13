@@ -1,10 +1,9 @@
-# public info - Git configuration file.
 
 [include]
-	path = ~/.priv/.gitconfig
+	path = ~/.priv/gitconfig
 
 [core]
-	editor = emacsclient -a mg
+#	editor = emacsclient -a mg
 	autocrlf = input
 	excludesfile = /home/kevin/.gitignore_global
 	pager = less
