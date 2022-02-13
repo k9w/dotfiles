@@ -268,3 +268,9 @@ Removed ksshaskpass.
 
 Install Neovim
 
+
+<p>
+# 02-05
+
+Install NodeJS and npm for Intermediate JavaScript at Epicodus.
+
