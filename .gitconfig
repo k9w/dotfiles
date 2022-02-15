@@ -6,9 +6,9 @@
 
 # https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-configurations
 
-[user]
-	name = Kevin Williams
-	email = kevin@k9w.org
+[include]
+	path = ~/.priv/gitconfig
+
 [core]
 #	editor = code --wait
 	editor = vi
