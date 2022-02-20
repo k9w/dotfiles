@@ -18,7 +18,8 @@
 (setq confirm-kill-emacs 'yes-or-no-p)
 '(fill-column 72)
 (setq indent-tabs-mode nil
-      js-indent-level 2)
+    css-indent-offset 2
+    js-indent-level 2)
 (setq column-number-mode t)
 (menu-bar-mode -1)
 (setq tab-bar-show nil)
