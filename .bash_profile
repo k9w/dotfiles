@@ -8,5 +8,6 @@ fi
 # User specific environment and startup programs
 
 # Add .NET Core SDK tools
-export PATH="$PATH:/home/kevin/.dotnet/tools"
+# Commented out because it was adding it to the path twice.
+# export PATH="$PATH:/home/kevin/.dotnet/tools"
 
