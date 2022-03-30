@@ -1,4 +1,5 @@
 " 09-08-21
+" Neovim config stored at: ~/.config/nvim/init.vim
 
 " https://thoughtbot.com/blog/wrap-existing-text-at-80-characters-in-vim 
 set textwidth=72
