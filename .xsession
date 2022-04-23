@@ -16,3 +16,7 @@ xrdb ~/.Xresources
 # Start xfce, without xterm.
 # startxfce4
 
+# 04-22-2022 installed gnome-extras. Gnome is best run through gdm, not
+# xenodm. See the gnome pkg-readme 'Cheat sheet' section for setup
+# steps taken.
+

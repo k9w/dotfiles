@@ -13,7 +13,7 @@
 XTerm*foreground: rgb:ff/ff/ff
 XTerm*background: rgb:00/00/00
 XTerm*faceName:			DeJavu Mono
-XTerm*faceSize:			10
+XTerm*faceSize:			9
 XTerm*scrollBar:		false
 XTerm*selectToClipboard:	true
 XTerm*metaSendsEscape:		true
