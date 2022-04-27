@@ -14,9 +14,12 @@
  '(package-selected-packages '(markdown-preview-mode))
 )
 
+;; This can be in custom-set-variables, but works on its own.
+'(fill-column 72)
+
 (server-start)
 (setq confirm-kill-emacs 'yes-or-no-p)
-'(fill-column 72)
+
 (setq indent-tabs-mode nil
     css-indent-offset 2
     js-indent-level 2)
