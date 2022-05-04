@@ -14,6 +14,7 @@ export PATH HOME TERM
 # $HOME/.profile - future interactive shell invocations will process any
 # file pointed to by $ENV:
 
+echo .profile
 if [ -e ~/.kshrc ]; then
 	: ${ENV='~/.kshrc'}
 	export ENV
