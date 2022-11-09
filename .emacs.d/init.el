@@ -27,6 +27,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (toggle-frame-fullscreen)
+(setq-default auto-fill-function 'do-auto-fill)
 
 ;; Add MELPA package repo to the default ELPA package repo.
 (require 'package)

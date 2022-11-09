@@ -10,3 +10,5 @@ PS1='[\u@\h \W]\$ '
 
 
 export SSH_AUTH_SOCK=$(find /tmp 2> /dev/null | grep agent)
+export EDITOR=vi
+
