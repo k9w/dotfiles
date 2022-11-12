@@ -14,12 +14,9 @@
  '(package-selected-packages '(markdown-preview-mode))
 )
 
-;; This can be in custom-set-variables, but works on its own.
-'(fill-column 72)
-
 (server-start)
 (setq confirm-kill-emacs 'yes-or-no-p)
-
+'(fill-column 72)
 (setq indent-tabs-mode nil
     css-indent-offset 2
     js-indent-level 2)
@@ -30,6 +27,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (toggle-frame-fullscreen)
+(setq-default auto-fill-function 'do-auto-fill)
+(setq make-backup-files nil)
 
 ;; Add MELPA package repo to the default ELPA package repo.
 (require 'package)
