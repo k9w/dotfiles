@@ -28,6 +28,7 @@
 (scroll-bar-mode -1)
 (toggle-frame-fullscreen)
 (setq-default auto-fill-function 'do-auto-fill)
+(setq make-backup-files nil)
 
 ;; Add MELPA package repo to the default ELPA package repo.
 (require 'package)
