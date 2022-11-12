@@ -9,3 +9,5 @@ colorscheme industry
 
 syntax on
 
+set ruler
+

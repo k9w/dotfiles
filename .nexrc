@@ -1,2 +1,4 @@
 " Comment
 set wl=72
+set ruler
+
