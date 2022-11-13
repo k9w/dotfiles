@@ -7,3 +7,6 @@ set textwidth=72
 " https://alvinalexander.com/blog/post/linux-unix/how-set-vim-gvim-default-color-scheme 
 colorscheme industry
 
+" Syntax highlighting is on by default.
+" syntax on
+

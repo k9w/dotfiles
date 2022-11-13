@@ -2,5 +2,7 @@
 " Vim config stored at ~/.vimrc
 
 set textwidth=72
-syntax on
+
+" Syntax highlighting is on by default.
+" syntax on
 

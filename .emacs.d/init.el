@@ -18,6 +18,7 @@
 '(fill-column 72)
 (setq-default auto-fill-function 'do-auto-fill)
 (setq confirm-kill-emacs 'yes-or-no-p)
+(setq make-backup-files nil)
 (setq column-number-mode t)
 (setq tab-bar-show nil)
 (setq indent-tabs-mode nil
