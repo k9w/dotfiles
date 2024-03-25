@@ -1,27 +1,20 @@
-# This is Git's per-user configuration file.
-
-# core.editor, core.excludesfile and color.uiset per instructions from
-# Epicodus at:
-
-
-# https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-configurations
 
 [include]
 	path = ~/.priv/gitconfig
 
 [core]
-#	editor = code --wait
-	editor = vi
-	autocrlf = input
-	excludesfile = /home/kevin/.gitignore_global
+	excludesfile = ~/.gitignore
+#	pager = less
+#	editor = emacsclient -a mg
+
+# Normalize line endings across Windows, Linux, etc.
+#	autocrlf = input
+
 [init]
 	defaultBranch = main
 
-[color]
-#	ui = true ; color.ui already defaults to true.
-
-# The code block below is auto-inserted by 'gh auth login'.
+# Inserted automatically by 'gh auth login'.
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/usr/local/bin/gh auth git-credential
 

@@ -3,6 +3,6 @@
 
 set textwidth=72
 
-" Syntax highlighting is on by default.
+" Syntax highlighting is already on by default in Linux.
 " syntax on
 

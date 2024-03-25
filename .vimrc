@@ -9,4 +9,3 @@ colorscheme industry
 
 " Syntax highlighting is on by default.
 " syntax on
-
