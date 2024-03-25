@@ -2,8 +2,11 @@
 #
 # sh/ksh initialization
 
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
-export PATH HOME TERM
+PATH=$HOME/bin:$HOME/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+
+CVSROOT=/cvs
+
+export PATH HOME TERM CVSROOT
 
 # If the ENV parameter is set when an interactive shell starts (or, in
 # the case of login shells, after any profiles are processed), its value

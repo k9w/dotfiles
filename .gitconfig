@@ -3,10 +3,13 @@
 	path = ~/.priv/gitconfig
 
 [core]
+	excludesfile = ~/.gitignore
+#	pager = less
 #	editor = emacsclient -a mg
-	autocrlf = input
-	excludesfile = /home/kevin/.gitignore_global
-	pager = less
+
+# Normalize line endings across Windows, Linux, etc.
+#	autocrlf = input
+
 [init]
 	defaultBranch = main
 

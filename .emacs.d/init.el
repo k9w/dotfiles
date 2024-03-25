@@ -8,6 +8,15 @@
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-enabled-themes '(manoj-dark))
 
+ ;; https://superuser.com/questions/422968/how-to-find-out-current-font-used-in-my-emacs
+ ;; Set font size smaller than default.
+
+ (set-face-attribute 'default nil
+;;		     :family "Source Code Pro"
+		     :height 80
+ 		     :weight 'normal
+		     :width 'normal)
+
 ;; Only works on the initial frame. Ask how to apply it to all frames.
  '(fringe-mode 0 nil (fringe))
  '(inhibit-startup-screen t)

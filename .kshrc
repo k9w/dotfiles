@@ -14,3 +14,8 @@ fi
 # EDITOR=/usr/bin/mg
 # export EDITOR 
 
+# Enable WebAssemly in Chromium for Argon2 KDF with Bitwarden.
+# Invocation: 
+# '$ chrome --enable-wasm'
+export ENABLE_WASM=1
+
