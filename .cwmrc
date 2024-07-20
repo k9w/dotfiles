@@ -1,11 +1,9 @@
-# started 07-01-2021
+# Remove window border for applications to correctly fill the screen.
 
-# CWM uses C-/ to search applications. Emacs and mg use it to undo.
-# CWM does not even find open applications with it. And I want to use
-# it for Emacs. So the below command unbinds the key for CWM.
+borderwidth 0
 
-# Specifying C-/ did not work here. cwm(1) manpage refers to the
-# command as C-slash, which works below. But that was not obvious from
-# the manpage.
+# cwm(1) uses C-/ to search applications. Emacs and mg use it to undo,
+# which is what I want. Unbind it from cwm with C-slash per manpage. 
 
 unbind-key C-slash
+
