@@ -1,11 +1,6 @@
+# Pick the window manager or desktop environment you want to start from 
+# the .xsession.d folder. It must already be installed. Many need the
+# messagebus service enabled and running.
 
-# Call xrdb to set the xterm font and colors.
-xrdb ~/.Xresources 
-
-# Start cwm; launch xterm first.
- xterm &
- cwm
-
-# Start xfce, without xterm.
-# startxfce4
+. ./.xsession.d/cwm
 

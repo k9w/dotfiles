@@ -1,0 +1,7 @@
+# Set xterm font and colors.
+xrdb ~/.Xresources
+
+# Start xterm and cwm.
+xterm &
+cwm
+

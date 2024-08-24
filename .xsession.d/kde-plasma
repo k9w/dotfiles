@@ -1,0 +1,15 @@
+# KDE Plasma
+
+export XDG_RUNTIME_DIR=/tmp/run/$(id -u)
+if [ ! -d $XDG_RUNTIME_DIR ]; then
+    mkdir -m 700 -p $XDG_RUNTIME_DIR
+fi
+
+export QT_FORCE_STDERR_LOGGING=1
+export QT_LOGGING_RULES="*=true"
+export XDG_CURRENT_DESKTOP=KDE
+export DESKTOP_SESSION=plasma
+
+/usr/local/bin/qdbus-qt6 org.kde.KWin /KWin supportInformation
+
+/usr/local/bin/startplasma-x11 > ~/.startplasma-x11.log 2>&1
