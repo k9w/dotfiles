@@ -1,12 +1,18 @@
-# $ OpenBSD: dot.profile,v 1.5 2018/02/02 02:29:54 yasuoka Exp $
+# $OpenBSD: dot.profile,v 1.8 2022/08/10 07:40:37 tb Exp $
 #
 # sh/ksh initialization
 
-PATH=$HOME/bin:$HOME/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
+# Add ~/.local/bin to $PATH for Python environment commands, such as mkdocs.
+PATH=$HOME/bin:$HOME/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin
 
+# Assume OpenBSD repo in /cvs is default for cvs(1). Use 'cvs -d' to
+# override this.
 CVSROOT=/cvs
 
-export PATH HOME TERM CVSROOT
+# Enable webassembly in Chromium for Bitwarden login to use argon2id KDF.
+ENABLE_WASM=1
+
+export PATH HOME TERM CVSROOT ENABLE_WASM=1
 
 # If the ENV parameter is set when an interactive shell starts (or, in
 # the case of login shells, after any profiles are processed), its value
