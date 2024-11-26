@@ -9,10 +9,7 @@ PATH=$HOME/bin:$HOME/.local/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/us
 # override this.
 CVSROOT=/cvs
 
-# Enable webassembly in Chromium for Bitwarden login to use argon2id KDF.
-ENABLE_WASM=1
-
-export PATH HOME TERM CVSROOT ENABLE_WASM=1
+export PATH HOME TERM CVSROOT
 
 # If the ENV parameter is set when an interactive shell starts (or, in
 # the case of login shells, after any profiles are processed), its value
